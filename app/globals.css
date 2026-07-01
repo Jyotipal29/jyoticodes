@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  /* Surfaces -- pure black background, near-black elevated surfaces */
+  --color-black: #000000;
+  --color-surface-1: #0a0a0a;
+  --color-surface-2: #111111;
+
+  /* Text scale */
+  --color-white: #ffffff;
+  --color-gray-400: #a1a1a1;
+  --color-gray-600: #666666;
+  --color-border: #333333;
+
+  /* Single accent color -- CTAs, italic emphasis, active nav state, chart lines */
+  --color-accent: #0070f3;
+
+  /* Font families -- Geist is wired in app/layout.tsx via the `geist` package,
+     which exposes these exact CSS variable names on <html>. */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", "SFMono-Regular",
+    Menlo, Consolas, monospace;
+
+  /* Small radius scale -- no large/pill radii anywhere in this design system */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+}
+
+body {
+  background: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+}
