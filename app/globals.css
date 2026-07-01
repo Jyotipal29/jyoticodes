@@ -34,8 +34,36 @@
   --radius-lg: 8px;
 }
 
+/* Light-mode token overrides. Every component styles itself with the
+   bg-black, text-white, bg-surface, text-gray, and border-border utilities
+   generated from the @theme tokens above -- none of them reference `dark:`
+   or hardcode a hex value directly. Overriding the tokens' values here,
+   scoped to the `.light` class next-themes applies to <html>, means the
+   whole site re-themes correctly with no per-component changes: the CSS
+   custom properties cascade, so `var(--color-black)` resolves to this
+   block's value anywhere inside `<html class="light">`. The accent color
+   is intentionally unchanged -- it's the one constant across both themes. */
+.light {
+  --color-black: #ffffff;
+  --color-surface-1: #f5f5f5;
+  --color-surface-2: #ececec;
+  --color-white: #0a0a0a;
+  --color-gray-400: #525252;
+  --color-gray-600: #8a8a8a;
+  --color-border: #e2e2e2;
+}
+
 body {
   background: var(--color-black);
   color: var(--color-white);
   font-family: var(--font-sans);
+}
+
+/* Smooth-scroll the nav's anchor links (#about, #career, ...) -- gated
+   behind `no-preference` so reduced-motion users get instant jumps instead,
+   with no JS required to opt them out. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }

@@ -14,7 +14,10 @@ const companyCount = new Set(career.map((role) => role.company)).size;
 // headline, two narrative paragraphs, and 3 derived stat callouts.
 export function About() {
   return (
-    <section id="about" className="border-t border-border px-6 py-24 sm:px-10 lg:px-16">
+    <section
+      id="about"
+      className="scroll-mt-24 border-t border-border px-6 py-24 sm:px-10 lg:px-16"
+    >
       <SectionLabel index="01" label="About" />
 
       <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:gap-16">

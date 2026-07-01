@@ -26,7 +26,7 @@ export function Career() {
   const latestRole = reverseChronological[0];
 
   return (
-    <section id="career" className="border-border border-t px-6 py-24">
+    <section id="career" className="scroll-mt-24 border-border border-t px-6 py-24">
       <div className="mx-auto max-w-5xl">
         <SectionLabel index="02" label="Career" />
         <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">

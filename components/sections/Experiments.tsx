@@ -8,34 +8,36 @@ import { Tag } from "@/components/ui/Tag";
 // pills. Decorative/tag-only in this plan -- no detail page, not clickable.
 export function Experiments() {
   return (
-    <section id="experiments" className="mx-auto max-w-3xl px-6 py-24">
-      <SectionLabel index="07" label="Experiments" className="mb-8" />
+    <section id="experiments" className="scroll-mt-24 border-t border-border px-6 py-24">
+      <div className="mx-auto max-w-3xl">
+        <SectionLabel index="07" label="Experiments" className="mb-8" />
 
-      {experiments.length === 0 ? (
-        <EmptyState message="No experiments yet — check back soon." />
-      ) : (
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {experiments.map((experiment) => (
-            <li key={experiment.slug}>
-              <Card className="flex flex-col gap-3 p-6">
-                <h3 className="text-base font-semibold text-white">
-                  {experiment.title}
-                </h3>
-                <p className="text-sm text-gray-400">
-                  {experiment.description}
-                </p>
-                {experiment.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
-                    {experiment.tags.map((tag) => (
-                      <Tag key={tag}>{tag}</Tag>
-                    ))}
-                  </div>
-                )}
-              </Card>
-            </li>
-          ))}
-        </ul>
-      )}
+        {experiments.length === 0 ? (
+          <EmptyState message="No experiments yet — check back soon." />
+        ) : (
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {experiments.map((experiment) => (
+              <li key={experiment.slug}>
+                <Card className="flex flex-col gap-3 p-6">
+                  <h3 className="text-base font-semibold text-white">
+                    {experiment.title}
+                  </h3>
+                  <p className="text-sm text-gray-400">
+                    {experiment.description}
+                  </p>
+                  {experiment.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {experiment.tags.map((tag) => (
+                        <Tag key={tag}>{tag}</Tag>
+                      ))}
+                    </div>
+                  )}
+                </Card>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </section>
   );
 }
