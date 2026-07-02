@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Nav } from "@/components/nav/Nav";
+import { ModalPresence } from "@/components/project-detail/ModalPresence";
 import { siteConfig } from "@/content/site-config";
 import "./globals.css";
 
@@ -35,7 +36,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Nav />
           {children}
-          {modal}
+          <ModalPresence>{modal}</ModalPresence>
         </ThemeProvider>
       </body>
     </html>

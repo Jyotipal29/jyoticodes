@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { X } from "lucide-react";
 import type { Project } from "@/content/types";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
@@ -19,6 +19,14 @@ import { ProjectHeader } from "./ProjectHeader";
  * directly, so `app/@modal/(.)projects/[slug]/page.tsx` fetches the project
  * server-side and hands it to this client component to own the
  * overlay/animation/dismiss behavior.
+ *
+ * Deliberately does NOT wrap its own `motion.div` in `AnimatePresence` --
+ * `app/layout.tsx` wraps the whole `@modal` slot in `<ModalPresence>`
+ * instead, one level up. `AnimatePresence` can only play an exit animation
+ * for a child it survives to see removed; nesting it in here would put it
+ * inside the exact subtree that unmounts in one commit when the `@modal`
+ * slot swaps to `default.tsx` on `router.back()`, so it would never get the
+ * chance to hold this component back for its exit transition.
  */
 export function ProjectModalOverlay({ project }: { project: Project }) {
   const router = useRouter();
@@ -42,42 +50,40 @@ export function ProjectModalOverlay({ project }: { project: Project }) {
   }, []);
 
   return (
-    <AnimatePresence>
-      <motion.div
-        key="overlay"
-        className="fixed inset-0 z-50 flex justify-center overflow-y-auto px-4 py-8 sm:py-16"
-        initial={prefersReducedMotion ? false : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
+    <motion.div
+      key="overlay"
+      className="fixed inset-0 z-50 flex justify-center overflow-y-auto px-4 py-8 sm:py-16"
+      initial={prefersReducedMotion ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
+    >
+      <div
+        className="fixed inset-0 -z-10 bg-black/80 backdrop-blur-sm"
+        aria-hidden="true"
+        onClick={close}
+      />
+
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={`${project.title} details`}
+        className="relative h-fit w-full max-w-4xl rounded-md border border-border bg-black"
       >
-        <div
-          className="fixed inset-0 -z-10 bg-black/80 backdrop-blur-sm"
-          aria-hidden="true"
+        <button
+          type="button"
           onClick={close}
-        />
-
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={`${project.title} details`}
-          className="relative h-fit w-full max-w-4xl rounded-md border border-border bg-black"
+          aria-label="Close"
+          className="absolute top-4 right-4 z-10 flex size-8 items-center justify-center rounded-sm border border-border bg-black/80 text-gray-400 transition-colors hover:border-accent hover:text-accent"
         >
-          <button
-            type="button"
-            onClick={close}
-            aria-label="Close"
-            className="absolute top-4 right-4 z-10 flex size-8 items-center justify-center rounded-sm border border-border bg-black/80 text-gray-400 transition-colors hover:border-accent hover:text-accent"
-          >
-            <X className="size-4" aria-hidden="true" />
-          </button>
+          <X className="size-4" aria-hidden="true" />
+        </button>
 
-          <div className="px-6 py-10 sm:px-10">
-            <ProjectHeader project={project} heroLayoutId={`project-${project.slug}`} />
-            <ProjectDetailContent project={project} />
-          </div>
+        <div className="px-6 py-10 sm:px-10">
+          <ProjectHeader project={project} heroLayoutId={`project-${project.slug}`} />
+          <ProjectDetailContent project={project} />
         </div>
-      </motion.div>
-    </AnimatePresence>
+      </div>
+    </motion.div>
   );
 }

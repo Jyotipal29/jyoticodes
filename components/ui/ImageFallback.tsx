@@ -21,11 +21,16 @@ export function ImageFallback({
   ...imageProps
 }: ImageFallbackProps) {
   if (!src) {
+    // Callers using `fill` (ProjectCard, ProjectHeader, ProjectDemo) rely on
+    // the placeholder covering the same box `next/image`'s `fill` mode would
+    // have -- without this, the placeholder collapses to its content's
+    // natural height instead of filling the aspect-ratio container.
+    const fillClasses = imageProps.fill ? "absolute inset-0 h-full w-full" : "";
     return (
       <div
         role="img"
         aria-label={alt}
-        className={`flex items-center justify-center border border-border bg-surface-2 font-mono text-sm text-gray-400 ${className}`.trim()}
+        className={`flex items-center justify-center border border-border bg-surface-2 font-mono text-sm text-gray-400 ${fillClasses} ${className}`.trim()}
       >
         {fallback}
       </div>

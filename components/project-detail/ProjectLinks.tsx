@@ -1,7 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import type { Project } from "@/content/types";
 import { Button } from "@/components/ui/Button";
-import { GithubIcon } from "./ProjectHeader";
+import { GithubIcon } from "@/components/icons/SocialIcons";
 import { shouldShowLiveLink, shouldShowSourceLink } from "./section-visibility";
 
 // Summary row of the same live/source links surfaced in ProjectHeader's CTA

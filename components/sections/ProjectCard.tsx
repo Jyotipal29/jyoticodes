@@ -6,6 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/content/types";
 import { ImageFallback } from "@/components/ui/ImageFallback";
 import { Tag } from "@/components/ui/Tag";
+import { getInitials } from "@/lib/get-initials";
 
 // Derives a coarse category label for the card's top monospace tag row
 // (e.g. "WEB APP · 2023") -- there's no explicit `category` field on
@@ -34,12 +35,7 @@ function deriveYear(project: Project): string {
 // mounted underneath the `@modal` intercepting overlay (see
 // app/@modal/(.)projects/[slug]/page.tsx). Needs "use client" for Motion.
 export function ProjectCard({ project }: { project: Project }) {
-  const initials = project.title
-    .split(" ")
-    .map((word) => word[0])
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
+  const initials = getInitials(project.title);
 
   const cardTags = project.tags.slice(0, 4);
 

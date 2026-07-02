@@ -38,7 +38,7 @@ export function About() {
               <h3 className="font-mono text-xs tracking-wide text-gray-400 uppercase">
                 Achievements
               </h3>
-              <ul className="mt-3 flex flex-col gap-2 text-sm text-gray-300">
+              <ul className="mt-3 flex flex-col gap-2 text-sm text-gray-400">
                 {siteConfig.achievements.map((achievement) => (
                   <li key={`${achievement.award}-${achievement.year}`}>
                     {achievement.award} — {achievement.company} — {achievement.year}
@@ -51,7 +51,7 @@ export function About() {
               <h3 className="font-mono text-xs tracking-wide text-gray-400 uppercase">
                 Interests &amp; Hobbies
               </h3>
-              <ul className="mt-3 flex flex-col gap-2 text-sm text-gray-300">
+              <ul className="mt-3 flex flex-col gap-2 text-sm text-gray-400">
                 {siteConfig.interests.map((interest) => (
                   <li key={interest}>{interest}</li>
                 ))}
@@ -75,7 +75,7 @@ export function About() {
             <span className="text-accent italic">last</span>.
           </h2>
 
-          <div className="flex flex-col gap-4 text-base leading-relaxed text-gray-300">
+          <div className="flex flex-col gap-4 text-base leading-relaxed text-gray-400">
             <p>{siteConfig.pitch}</p>
             <p>
               Over the past decade I&rsquo;ve moved from shipping internal tooling as an

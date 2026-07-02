@@ -23,9 +23,14 @@ export function shouldShowSourceLink(project: Project): boolean {
 }
 
 export function shouldShowDemo(project: Project): boolean {
-  return Boolean(project.demo);
+  // A `demo` object with no video and no screenshots would otherwise render
+  // an empty section -- check the fields that actually produce content, not
+  // just whether the object exists.
+  return Boolean(project.demo?.videoUrl) || Boolean(project.demo?.screenshots.length);
 }
 
 export function shouldShowArchitecture(project: Project): boolean {
-  return Boolean(project.architecture);
+  // Same reasoning as shouldShowDemo: an `architecture` object with an empty
+  // `nodes` array has nothing to draw.
+  return Boolean(project.architecture) && project.architecture!.nodes.length > 0;
 }
