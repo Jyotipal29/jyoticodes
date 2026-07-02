@@ -87,7 +87,7 @@ export function Career() {
                 </div>
                 <div className="flex items-center justify-between gap-4">
                   <dt className="text-gray-400">Learning now</dt>
-                  <dd className="font-mono text-white">Applied ML for infra tooling</dd>
+                  <dd className="font-mono text-white">Scaling AI agents in production</dd>
                 </div>
               </dl>
             </div>

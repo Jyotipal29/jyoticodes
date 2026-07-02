@@ -75,12 +75,13 @@ export function About() {
           <div className="flex flex-col gap-4 text-base leading-relaxed text-gray-400">
             <p>{siteConfig.pitch}</p>
             <p>
-              Over the past decade I&rsquo;ve moved from shipping internal tooling as an
-              intern to setting technical direction for multiple product lines as a staff
-              engineer — leading rearchitectures, mentoring engineers, and building the
-              systems teams actually want to work in. I care as much about the developer
-              experience of a codebase as I do about the experience of the product it
-              ships.
+              In just under three years I&rsquo;ve gone from shipping customer-facing
+              features as a full stack engineer to owning a company&rsquo;s entire
+              product architecture as a founding engineer, and most recently to
+              embedding AI directly into production workflows. I like working close to
+              both ends of the stack — React and Vue on the frontend, Python and Node on
+              the backend — and I&rsquo;m especially drawn to problems where AI agents
+              need to do real, verifiable work instead of just answering questions.
             </p>
           </div>
 
