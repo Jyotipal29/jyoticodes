@@ -1,18 +1,5 @@
 import type { Architecture } from "@/content/types";
 
-/**
- * Hand-built inline SVG rendering a project's `architecture` diagram data --
- * bordered-rectangle nodes with monospace labels, arrows between them in the
- * accent color. Deliberately a basic auto-layout (nodes placed in
- * declaration-order row) rather than a full graph-layout algorithm, per the
- * plan's KTD: only one placeholder project (`nimbus-dashboard`) has
- * `architecture` set, so this only needs to render that one shape well.
- *
- * Edges between array-adjacent nodes draw as a straight arrow; any other
- * edge (e.g. a "back" edge like Nimbus's `db -> api` query path) draws as a
- * curved arc below the row so it doesn't overlap the straight edges.
- */
-
 const NODE_WIDTH = 168;
 const NODE_HEIGHT = 56;
 const NODE_GAP = 72;
@@ -95,7 +82,6 @@ export function ArchitectureDiagram({ architecture }: { architecture: Architectu
           );
         }
 
-        // Non-adjacent ("back") edge: arc below the row.
         const fromCenterX = from.x + NODE_WIDTH / 2;
         const toCenterX = to.x + NODE_WIDTH / 2;
         const arcY = TOP_MARGIN + NODE_HEIGHT + ARC_GAP / 2;

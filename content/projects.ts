@@ -1,19 +1,5 @@
 import type { Project } from "./types";
 
-/**
- * Placeholder project data, in display/array order (the plan's chosen
- * ordering convention — no implicit date sort; the grid and prev/next nav
- * both follow this declaration order).
- *
- * Notes on the deliberate gaps below:
- * - "acme-devtools-cli" intentionally omits `liveUrl` (stays `undefined`)
- *   to exercise the "hide, don't disable" rule for optional CTAs.
- * - "fleet-telemetry-hub" intentionally omits `coverImage` to exercise
- *   `ImageFallback`'s missing-src fallback.
- * - The other cover images point at `/images/projects/<slug>.png` paths
- *   that do not exist yet under `public/images/`, to exercise the
- *   broken/missing-asset path once real images are added.
- */
 export const projects: Project[] = [
   {
     slug: "nimbus-dashboard",
@@ -140,8 +126,6 @@ export const projects: Project[] = [
     role: "Solo project",
     timeframe: "2022",
     status: "Archived",
-    // Intentionally no liveUrl — internal tool with no public URL, used to
-    // exercise the "hide, don't disable" rule for the optional live-link CTA.
     githubUrl: "https://github.com/jordanvale-placeholder/acme-devtools-cli",
     overview: [
       "Acme Devtools CLI grew out of a handful of one-off shell scripts engineers kept copy-pasting between projects, consolidating them into a single, documented, versioned tool.",
@@ -210,7 +194,6 @@ export const projects: Project[] = [
   },
 ];
 
-/** Returns the project matching `slug`, or `undefined` if none matches. */
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug);
 }

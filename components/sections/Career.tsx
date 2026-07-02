@@ -14,10 +14,6 @@ function formatYearRange(yearStart: number, yearEnd?: number): string {
 export function Career() {
   const prefersReducedMotion = useReducedMotion();
 
-  // content/career.ts documents its array order as "cosmetic for authoring
-  // convenience" and leaves reverse-chronological ordering as this
-  // component's responsibility -- sort defensively rather than trusting
-  // declaration order.
   const reverseChronological = [...career].sort(
     (a, b) => b.yearStart - a.yearStart
   );
@@ -34,7 +30,6 @@ export function Career() {
         </h2>
 
         <div className="mt-16 grid grid-cols-1 items-start gap-12 md:grid-cols-[1fr_280px]">
-          {/* Timeline */}
           <ol className="border-border relative list-none border-l pl-10">
             {reverseChronological.map((role, index) => (
               <motion.li
@@ -68,7 +63,6 @@ export function Career() {
             ))}
           </ol>
 
-          {/* Sticky sidebar -- only sticky from md up; stacks inline below it. */}
           <aside className="md:sticky md:top-24 md:self-start">
             <div className="border-border rounded-md border p-6">
               <blockquote className="text-accent text-lg italic leading-relaxed">

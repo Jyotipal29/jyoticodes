@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/Button";
 import { GithubIcon } from "@/components/icons/SocialIcons";
 import { shouldShowLiveLink, shouldShowSourceLink } from "./section-visibility";
 
-// Summary row of the same live/source links surfaced in ProjectHeader's CTA
-// row -- omitted entirely when neither field is present.
 export function ProjectLinks({ project }: { project: Project }) {
   if (!shouldShowLiveLink(project) && !shouldShowSourceLink(project)) return null;
 

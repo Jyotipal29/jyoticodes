@@ -1,10 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
-// Site-wide 404 (R12's sibling case) -- catches any unmatched route outside
-// the `/projects/[slug]` segment, which has its own on-brand not-found.tsx.
-// The root Nav from app/layout.tsx still renders above this, so the sticky
-// nav and its section anchors remain reachable even from a dead link.
 export default function NotFound() {
   return (
     <main className="mx-auto flex min-h-[70vh] max-w-2xl flex-col items-center justify-center gap-6 px-6 text-center">

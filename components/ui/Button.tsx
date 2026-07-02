@@ -24,13 +24,9 @@ type ButtonAsAnchor = CommonProps &
 
 export type ButtonProps = ButtonAsButton | ButtonAsAnchor;
 
-// Small radius only -- this design language never uses pill/rounded-full CTAs.
 const baseClasses =
   "inline-flex items-center justify-center gap-2 rounded-sm border px-4 py-2 font-sans text-sm font-medium transition-colors";
 
-// `primary` is the accent-filled variant -- besides active nav/tab states,
-// this is the ONLY place in the design system that uses a large fill of the
-// accent color. `outline` is border-only, matching the rest of the app.
 const variantClasses: Record<ButtonVariant, string> = {
   primary: "border-accent bg-accent text-white hover:bg-accent/90",
   outline:

@@ -9,12 +9,6 @@ export type ChatModalProps = {
   onClose: () => void;
 };
 
-/**
- * Placeholder for the "Chat with me" CTA (R2). The real AI-chat backend is
- * out of scope for this plan -- this is a static overlay only, with no
- * input field, so it never implies real interactivity. Dismissible via
- * Escape, a backdrop click, or the explicit close button.
- */
 export function ChatModal({ open, onClose }: ChatModalProps) {
   useEffect(() => {
     if (!open) return;

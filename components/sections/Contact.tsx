@@ -2,8 +2,6 @@ import { siteConfig } from "@/content/site-config";
 import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
-// Centered closing CTA -- accent-italic headline word, a warm paragraph
-// lowering the barrier to reach out, and a single `mailto:` "Say hello" CTA.
 export function Contact() {
   return (
     <section id="contact" className="scroll-mt-24 border-t border-border px-6 py-24">

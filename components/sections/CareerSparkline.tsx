@@ -1,12 +1,3 @@
-/**
- * Minimal hand-rolled sparkline plotting `CareerRole.level` (the 1-10
- * author-assigned seniority/scope score defined in content/types.ts)
- * against each entry's position. No axes, gridlines, or labels -- this is
- * a glanceable trend line, not a full chart.
- *
- * Callers should pass entries in chronological (oldest-first) order so the
- * line reads left-to-right as career progression over time.
- */
 export type CareerSparklinePoint = {
   level: number;
 };
@@ -28,8 +19,6 @@ export function CareerSparkline({ entries, className = "" }: CareerSparklineProp
   const levels = entries.map((entry) => entry.level);
   const min = Math.min(...levels);
   const max = Math.max(...levels);
-  // Guard against a flat/single-point series where max === min, which
-  // would otherwise divide by zero.
   const range = max - min || 1;
 
   const points = entries.map((entry, index) => {

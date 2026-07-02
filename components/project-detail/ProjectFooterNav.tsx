@@ -2,16 +2,10 @@ import Link from "next/link";
 import type { Project } from "@/content/types";
 
 export type ProjectFooterNavProps = {
-  /** `undefined` at the first project in content/projects.ts order. */
   previous?: Project;
-  /** `undefined` at the last project in content/projects.ts order. */
   next?: Project;
 };
 
-// Prev/next navigation computed from array position in content/projects.ts.
-// Hides whichever side is out of bounds (no wraparound) rather than
-// disabling it. Links via a plain <Link> to the canonical route -- no
-// interception needed between two detail pages.
 export function ProjectFooterNav({ previous, next }: ProjectFooterNavProps) {
   if (!previous && !next) return null;
 

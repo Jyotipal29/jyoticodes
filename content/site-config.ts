@@ -1,10 +1,5 @@
 import type { SiteConfig } from "./types";
 
-/**
- * Placeholder site configuration. Everything here is fictional and
- * structured for easy swap-out once real content is ready (see the plan's
- * Scope Boundaries — real personal content is deferred to follow-up work).
- */
 export const siteConfig: SiteConfig = {
   name: "Jordan Vale",
   role: "Senior Full-Stack Engineer",
@@ -48,10 +43,4 @@ export const siteConfig: SiteConfig = {
     { key: "Studied", value: "B.S. Computer Science, Rutherglen State" },
   ],
   openToWorkBadge: "OPEN TO WORK",
-  marquee: [
-    "Currently building: a self-hosted analytics dashboard",
-    "Currently listening: field-recorded ambient synth sets",
-    "Availability: taking on select freelance work",
-    "Currently reading: Designing Data-Intensive Applications",
-  ],
 };

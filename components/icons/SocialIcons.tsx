@@ -1,11 +1,3 @@
-// lucide-react ships generic/UI icons only (no brand/logo marks), so
-// GitHub and LinkedIn use small inline brand SVGs (official simple-icons
-// paths) sized and colored to match the lucide icon set (`currentColor`,
-// square bounding box). The "X" social link is genuinely a lucide icon in
-// callers that prefer it -- the platform's logo is a plain X glyph, which
-// lucide already ships -- but a solid-fill version lives here too so every
-// caller can pull all three brand marks from one place and render
-// identically wherever they appear (hero, footer, project detail header).
 export function GithubIcon({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">

@@ -5,8 +5,6 @@ export type CardProps = HTMLAttributes<HTMLDivElement> & {
   surface?: "surface-1" | "surface-2";
 };
 
-// Subtle background (surface-1/2) with a 1px border in the shared border
-// token -- the base container every card-shaped block in the app builds on.
 export function Card({
   children,
   className = "",

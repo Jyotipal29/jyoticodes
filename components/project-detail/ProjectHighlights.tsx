@@ -1,8 +1,6 @@
 import type { Project } from "@/content/types";
 import { Card } from "@/components/ui/Card";
 
-// `project.highlights` defaults to `[]` (per content/types.ts), so this is a
-// plain length check rather than an existence check.
 export function ProjectHighlights({ project }: { project: Project }) {
   if (project.highlights.length === 0) return null;
 

@@ -7,10 +7,6 @@ import { ModalPresence } from "@/components/project-detail/ModalPresence";
 import { siteConfig } from "@/content/site-config";
 import "./globals.css";
 
-// Modest metadata per R14/plan scope -- a title template (so any future
-// nested route's title reads "<Page Title> — <Name>") and a description
-// derived from the site owner's own pitch, not a dedicated SEO pass (OG
-// tags, per-page titles beyond this default, etc. are explicitly deferred).
 export const metadata: Metadata = {
   title: {
     default: `${siteConfig.name} — ${siteConfig.role}`,

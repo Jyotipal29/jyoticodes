@@ -9,9 +9,6 @@ const earliestYearStart = Math.min(...career.map((role) => role.yearStart));
 const yearsExperience = new Date().getFullYear() - earliestYearStart;
 const companyCount = new Set(career.map((role) => role.company)).size;
 
-// Two-column About section: a sidebar Card (Toolbox / Achievements /
-// Interests / key-value list) alongside a bio column with an accent-italic
-// headline, two narrative paragraphs, and 3 derived stat callouts.
 export function About() {
   return (
     <section

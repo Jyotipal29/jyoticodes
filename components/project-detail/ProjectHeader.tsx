@@ -16,18 +16,9 @@ import {
 
 export type ProjectHeaderProps = {
   project: Project;
-  /**
-   * Present only on the `@modal` intercepting overlay route -- shares the
-   * grid card's `layoutId` so Motion can FLIP-animate the thumbnail into
-   * this hero image. Omitted on the canonical route (direct load/refresh/
-   * shared link has no prior grid element to animate from), which instead
-   * plays a plain opacity fade-in.
-   */
   heroLayoutId?: string;
 };
 
-// Header + meta + CTA row + hero image, shared by both the canonical
-// `/projects/[slug]` page and the `@modal` intercepting overlay.
 export function ProjectHeader({ project, heroLayoutId }: ProjectHeaderProps) {
   const initials = getInitials(project.title);
 

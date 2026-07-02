@@ -1,10 +1,5 @@
 import type { CareerRole } from "./types";
 
-/**
- * Placeholder career history, most-recent role first. Order here is
- * cosmetic for authoring convenience — `Career.tsx` (U8) is responsible
- * for the reverse-chronological render order specified by the plan.
- */
 export const career: CareerRole[] = [
   {
     id: "acme-robotics-staff",

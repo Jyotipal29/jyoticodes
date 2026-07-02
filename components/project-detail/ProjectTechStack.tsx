@@ -9,9 +9,6 @@ const CATEGORY_LABELS: Record<keyof TechStackByCategory, string> = {
   thirdParty: "Third-party",
 };
 
-// Tech stack grouped by category from `techStackByCategory`. Each category
-// array defaults to `[]` (per content/types.ts), so only categories with at
-// least one entry render -- no empty "Database" heading with nothing under it.
 export function ProjectTechStack({ project }: { project: Project }) {
   const categories = (
     Object.keys(CATEGORY_LABELS) as Array<keyof TechStackByCategory>

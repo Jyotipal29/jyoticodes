@@ -4,11 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { ImageFallback } from "@/components/ui/ImageFallback";
 import { GithubIcon, LinkedinIcon, XIcon } from "@/components/icons/SocialIcons";
 import { siteConfig } from "@/content/site-config";
-import { Marquee } from "./Marquee";
 
-// Social links pulled from `siteConfig.social`. Every field except `email`
-// is optional (per content/types.ts) -- entries whose URL is missing are
-// omitted entirely rather than rendered as a disabled/broken link.
 const socialLinks: Array<{
   key: string;
   href: string | undefined;
@@ -26,11 +22,6 @@ const socialLinks: Array<{
   },
 ];
 
-// Hero section (R5): status badge, oversized name headline, one-paragraph
-// pitch, monospace stat row, resume CTA, social icon row, and a bordered
-// portrait frame -- followed by the below-the-fold status Marquee.
-// Purely presentational/server-renderable; the only client-side piece is
-// the Marquee it renders beneath itself.
 export function Hero() {
   const initials = siteConfig.name
     .split(" ")
@@ -95,8 +86,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
-      <Marquee />
     </section>
   );
 }

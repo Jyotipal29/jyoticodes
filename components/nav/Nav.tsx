@@ -9,29 +9,14 @@ import { MobileMenu } from "@/components/nav/MobileMenu";
 
 export type NavLink = { label: string; href: string };
 
-/**
- * Section anchors per R2. The sections themselves (`id="about"`, etc.) are
- * built in later units -- until then these just point at anchors that don't
- * exist yet, which is expected (see U5 plan notes).
- */
 export const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Career", href: "#career" },
   { label: "Projects", href: "#projects" },
-  { label: "Writing", href: "#writing" },
-  { label: "Daily Logs", href: "#daily-logs" },
-  { label: "Library", href: "#library" },
-  { label: "Experiments", href: "#experiments" },
   { label: "Contact", href: "#contact" },
 ];
 
-/**
- * Sticky top nav: logo/name, section links (active one tracked via
- * IntersectionObserver and highlighted in the accent color), a theme
- * toggle, and the chat CTA. Below `md`, section links collapse into
- * `MobileMenu` behind a hamburger trigger.
- */
 export function Nav() {
   const [activeId, setActiveId] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -43,8 +28,6 @@ export function Nav() {
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
 
-    // The section elements are built in later units -- gracefully do
-    // nothing (no IntersectionObserver, no crash) until they exist.
     if (elements.length === 0) return;
 
     const observer = new IntersectionObserver(

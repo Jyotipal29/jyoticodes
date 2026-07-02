@@ -12,12 +12,6 @@ export type MobileMenuProps = {
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
-/**
- * Below-`md` nav panel. A lightweight, hand-rolled focus trap: focuses the
- * first link on open, cycles Tab/Shift+Tab within the panel, and closes on
- * Escape or link selection -- the caller (`Nav`) is responsible for
- * returning focus to the hamburger trigger when `onClose` fires.
- */
 export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
   const panelRef = useRef<HTMLDivElement>(null);
 

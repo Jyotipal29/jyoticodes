@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-// Invalid-slug fallback (R12) -- rendered when `getProjectBySlug` returns
-// `undefined` and the canonical page calls `notFound()`.
 export default function ProjectNotFound() {
   return (
     <main className="mx-auto flex min-h-[60vh] max-w-2xl flex-col items-center justify-center gap-6 px-6 text-center">

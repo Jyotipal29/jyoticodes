@@ -6,8 +6,6 @@ export type StatCalloutProps = {
   className?: string;
 };
 
-// Big number/value + small monospace caption underneath -- used for the
-// hero stat row, the About section's 3 stat callouts, etc.
 export function StatCallout({ value, label, className = "" }: StatCalloutProps) {
   return (
     <div className={`flex flex-col gap-1 ${className}`.trim()}>

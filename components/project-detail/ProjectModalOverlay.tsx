@@ -9,25 +9,6 @@ import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { ProjectDetailContent } from "./ProjectDetailContent";
 import { ProjectHeader } from "./ProjectHeader";
 
-/**
- * Client-side owner of the `@modal` intercepting route's overlay chrome:
- * fixed dark backdrop (click to dismiss via `router.back()`), a scrollable
- * panel on top, Escape-to-close, and the FLIP-eligible hero image (shares
- * `layoutId={`project-${slug}`}` with the grid card via `ProjectHeader`).
- *
- * Async Server Components can't use "use client" hooks (Motion, router)
- * directly, so `app/@modal/(.)projects/[slug]/page.tsx` fetches the project
- * server-side and hands it to this client component to own the
- * overlay/animation/dismiss behavior.
- *
- * Deliberately does NOT wrap its own `motion.div` in `AnimatePresence` --
- * `app/layout.tsx` wraps the whole `@modal` slot in `<ModalPresence>`
- * instead, one level up. `AnimatePresence` can only play an exit animation
- * for a child it survives to see removed; nesting it in here would put it
- * inside the exact subtree that unmounts in one commit when the `@modal`
- * slot swaps to `default.tsx` on `router.back()`, so it would never get the
- * chance to hold this component back for its exit transition.
- */
 export function ProjectModalOverlay({ project }: { project: Project }) {
   const router = useRouter();
   const prefersReducedMotion = useReducedMotion();

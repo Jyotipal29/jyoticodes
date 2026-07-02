@@ -8,10 +8,6 @@ import { ImageFallback } from "@/components/ui/ImageFallback";
 import { Tag } from "@/components/ui/Tag";
 import { getInitials } from "@/lib/get-initials";
 
-// Derives a coarse category label for the card's top monospace tag row
-// (e.g. "WEB APP · 2023") -- there's no explicit `category` field on
-// `Project`, so this reasons over the fields that do exist (tags,
-// techStackByCategory) rather than inventing new content-schema surface.
 function deriveCategory(project: Project): string {
   if (project.tags.some((tag) => /cli/i.test(tag))) return "CLI TOOL";
   if (project.techStackByCategory.frontend.length > 0) return "WEB APP";
@@ -19,21 +15,12 @@ function deriveCategory(project: Project): string {
   return "PROJECT";
 }
 
-// `timeframe` is a free-form string ("2021 — 2023", "2023 — Present",
-// "2022"); the card wants one compact year, so this pulls the last 4-digit
-// year found (the more recent one for a range) and falls back to the raw
-// string if none is found.
 function deriveYear(project: Project): string {
   const matches = project.timeframe.match(/\d{4}/g);
   if (!matches || matches.length === 0) return project.timeframe;
   return matches[matches.length - 1];
 }
 
-// Entire card is a `<Link>` to the detail route. The cover-image wrapper
-// carries `layoutId={`project-${slug}`}`, shared with the detail page's hero
-// image, so Motion can FLIP-animate between them when the grid stays
-// mounted underneath the `@modal` intercepting overlay (see
-// app/@modal/(.)projects/[slug]/page.tsx). Needs "use client" for Motion.
 export function ProjectCard({ project }: { project: Project }) {
   const initials = getInitials(project.title);
 

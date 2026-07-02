@@ -2,9 +2,6 @@ import { projects } from "@/content/projects";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ProjectCard } from "./ProjectCard";
 
-// Renders content/projects.ts in array order (R10) at 1/2/3 columns
-// (mobile/tablet/desktop). Server-renderable itself -- the Motion/layoutId
-// logic lives one level down in ProjectCard.
 export function ProjectsGrid() {
   return (
     <section id="projects" className="scroll-mt-24 border-t border-border px-6 py-24">

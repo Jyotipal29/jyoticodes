@@ -4,8 +4,6 @@ export type TagProps = HTMLAttributes<HTMLSpanElement> & {
   children: ReactNode;
 };
 
-// Rectangular, border-only, no fill -- used for skill tags, tech-stack
-// pills, career impact tags, etc. Never `rounded-full`.
 export function Tag({ children, className = "", ...props }: TagProps) {
   return (
     <span

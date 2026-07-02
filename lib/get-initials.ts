@@ -1,4 +1,3 @@
-/** Up to `maxWords` initials from a title, for `ImageFallback`'s placeholder. */
 export function getInitials(title: string, maxWords = 2): string {
   return title
     .split(" ")

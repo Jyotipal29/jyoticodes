@@ -6,14 +6,6 @@ import { Moon, Sun } from "lucide-react";
 
 const emptySubscribe = () => () => {};
 
-/**
- * True only once the component has hydrated on the client. Backed by
- * useSyncExternalStore (server snapshot `false`, client snapshot `true`)
- * rather than a useEffect+setState pair, so there's no extra client-only
- * setState-in-effect render pass -- just the standard
- * server-renders-a-stable-default / client-reads-the-real-value pattern
- * next-themes consumers need to avoid a hydration mismatch.
- */
 function useHasMounted() {
   return useSyncExternalStore(
     emptySubscribe,
@@ -22,14 +14,6 @@ function useHasMounted() {
   );
 }
 
-/**
- * Icon button that toggles between dark and light theme via next-themes.
- *
- * Renders the icon for the *current* theme (moon while dark, sun while
- * light) -- clicking it switches to the other theme. Styled with the shared
- * design tokens: small radius, `--color-border` border, accent color
- * reserved for hover/active state per the "accent sparingly" rule.
- */
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const mounted = useHasMounted();

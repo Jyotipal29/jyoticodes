@@ -2,14 +2,8 @@ import type { Project } from "@/content/types";
 import { ImageFallback } from "@/components/ui/ImageFallback";
 import { shouldShowDemo } from "./section-visibility";
 
-// Renders the Demo section only when project.demo has a video or at least
-// one screenshot -- omitted entirely otherwise, per the "hide, don't
-// disable" rule (a demo object with neither would otherwise render an empty
-// section). `id="demo"` is the anchor target for ProjectHeader's "Watch
-// demo" CTA.
 export function ProjectDemo({ project }: { project: Project }) {
   if (!shouldShowDemo(project)) return null;
-  // Safe: shouldShowDemo already confirmed project.demo exists.
   const { videoUrl, screenshots } = project.demo!;
 
   return (

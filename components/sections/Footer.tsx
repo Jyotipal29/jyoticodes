@@ -5,8 +5,6 @@ import { siteConfig } from "@/content/site-config";
 
 const iconClasses = "h-4 w-4";
 
-// Copyright/tagline line plus the same social icon row the Hero uses,
-// gracefully omitting any social link left undefined in site-config.
 export function Footer() {
   const year = new Date().getFullYear();
   const { name, social } = siteConfig;

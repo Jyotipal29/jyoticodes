@@ -1,9 +1,6 @@
 import type { Project } from "@/content/types";
 import { StatCallout } from "@/components/ui/StatCallout";
 
-// Overview paragraphs + optional stat callouts. `project.stats` defaults to
-// `[]` at the data layer (per content/types.ts), so this only needs a plain
-// length check, not an existence check.
 export function ProjectOverview({ project }: { project: Project }) {
   return (
     <section className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-[1fr_280px]">
