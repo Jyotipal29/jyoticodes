@@ -32,7 +32,7 @@ export function About() {
                 </div>
               </div>
 
-              <div>
+              {/* <div>
                 <h3 className="font-mono text-xs tracking-wide text-gray-400 uppercase">
                   Achievements
                 </h3>
@@ -43,7 +43,7 @@ export function About() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div> */}
 
               <div>
                 <h3 className="font-mono text-xs tracking-wide text-gray-400 uppercase">
@@ -86,11 +86,11 @@ export function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 border-t border-border pt-8">
+            {/* <div className="grid grid-cols-3 gap-6 border-t border-border pt-8">
               <StatCallout value={`${yearsExperience}+`} label="Years experience" />
               <StatCallout value={String(career.length)} label="Roles held" />
               <StatCallout value={String(companyCount)} label="Companies" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

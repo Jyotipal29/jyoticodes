@@ -2,11 +2,11 @@ import type { SiteConfig } from "./types";
 
 export const siteConfig: SiteConfig = {
   name: "Jyoti",
-  role: "Full Stack Engineer",
+  role: "Full Stack Engineer, Frontend Engineer, AI Engineer",
   location: "Remote (India)",
   pitch:
     "I build full-stack web products end to end — React, Next.js, and Vue on the frontend, Python/FastAPI and Node.js on the backend — with a growing focus on shipping AI directly into production: LLM-powered workflows, autonomous agents, and RAG pipelines. Most recently I've been embedding AI into real products, from a GPT-powered support chatbot to social media agents running 500+ posts a week.",
-  metaStats: ["EST. 2023", "FULL STACK + AI", "SHIPPED 10+ FEATURES", "REMOTE-FIRST"],
+  metaStats: ["EST. 2023", "FULL STACK + AI", "REMOTE-FIRST"],
   resumeUrl: "/resume.pdf",
   social: {
     github: "https://github.com/Jyotipal29",
@@ -35,9 +35,9 @@ export const siteConfig: SiteConfig = {
     "RAG",
   ],
   achievements: [
-    { award: "Reduced document-matching time by 40% with AI-powered workflows", company: "BRIQ", year: "2025" },
-    { award: "Automated 500+ AI-driven social posts & interactions per week", company: "SpaiderSpace", year: "2025" },
-    { award: "Cut manual seating-assignment time by 60%", company: "ESSTART", year: "2024" },
+    // { award: "Reduced document-matching time by 40% with AI-powered workflows", company: "BRIQ", year: "2025" },
+    // { award: "Automated 500+ AI-driven social posts & interactions per week", company: "SpaiderSpace", year: "2025" },
+    // { award: "Cut manual seating-assignment time by 60%", company: "ESSTART", year: "2024" },
   ],
   interests: ["Add your own interests here — a resume doesn't list hobbies"],
   keyValues: [

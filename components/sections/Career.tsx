@@ -63,7 +63,7 @@ export function Career() {
             ))}
           </ol>
 
-          <aside className="md:sticky md:top-24 md:self-start">
+          {/* <aside className="md:sticky md:top-24 md:self-start">
             <div className="border-border rounded-md border p-6">
               <blockquote className="text-accent text-lg italic leading-relaxed">
                 &ldquo;Every role since has been about doing more with less
@@ -91,7 +91,7 @@ export function Career() {
                 </div>
               </dl>
             </div>
-          </aside>
+          </aside> */}
         </div>
       </div>
     </section>
