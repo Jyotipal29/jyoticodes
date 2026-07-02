@@ -4,7 +4,7 @@ import { ProjectCard } from "./ProjectCard";
 
 export function ProjectsGrid() {
   return (
-    <section id="projects" className="scroll-mt-24 border-t border-border px-6 py-24">
+    <section id="projects" className="scroll-mt-24 border-t border-border px-6 py-24 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl">
         <SectionLabel index="03" label="Projects" />
         <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">

@@ -25,7 +25,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const next = index < projects.length - 1 ? projects[index + 1] : undefined;
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-24">
+    <main className="mx-auto max-w-6xl px-6 py-24 sm:px-10 lg:px-16">
       <ProjectHeader project={project} />
       <ProjectDetailContent project={project} />
       <ProjectFooterNav previous={previous} next={next} />

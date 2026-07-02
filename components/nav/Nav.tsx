@@ -57,7 +57,7 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-black/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6 sm:px-10 lg:px-16">
         <a
           href="#home"
           className="flex shrink-0 items-center gap-2 font-mono text-sm font-semibold text-white"

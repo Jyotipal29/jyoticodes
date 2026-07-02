@@ -34,7 +34,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 py-10 text-center sm:flex-row sm:justify-between sm:text-left">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-10 text-center sm:flex-row sm:justify-between sm:px-10 sm:text-left lg:px-16">
         <div className="flex flex-col gap-1">
           <p className="font-mono text-xs text-gray-400">
             © {year} {name}. All rights reserved.

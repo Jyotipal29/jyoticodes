@@ -30,7 +30,7 @@ export function Hero() {
 
   return (
     <section id="home" className="flex scroll-mt-24 flex-col">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 py-24 sm:py-32">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-24 sm:px-10 sm:py-32 lg:px-16">
         <div className="grid grid-cols-1 items-start gap-12 sm:grid-cols-[1fr_auto]">
           <div className="flex flex-col gap-8">
             <span className="inline-flex w-fit items-center gap-2 rounded-sm border border-border px-3 py-1 font-mono text-xs tracking-wide text-gray-400 uppercase">
