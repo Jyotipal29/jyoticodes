@@ -3,7 +3,9 @@ import { StatCallout } from "@/components/ui/StatCallout";
 
 export function ProjectOverview({ project }: { project: Project }) {
   return (
-    <section className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-[1fr_280px]">
+    <section
+      className={`mt-16 grid grid-cols-1 gap-12 ${project.stats.length > 0 ? "md:grid-cols-[1fr_280px]" : ""}`}
+    >
       <div className="flex flex-col gap-4">
         <h2 className="font-mono text-sm tracking-widest text-gray-400 uppercase">
           Overview
