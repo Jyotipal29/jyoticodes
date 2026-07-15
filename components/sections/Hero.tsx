@@ -42,7 +42,12 @@ export function Hero() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <Button variant="primary" href={siteConfig.resumeUrl}>
+            <Button
+              variant="primary"
+              href={siteConfig.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
               Download resume →
             </Button>
 
@@ -52,17 +57,22 @@ export function Hero() {
                   (social): social is typeof social & { href: string } =>
                     Boolean(social.href)
                 )
-                .map(({ key, href, label, Icon }) => (
-                  <Button
-                    key={key}
-                    variant="outline"
-                    href={href}
-                    aria-label={label}
-                    className="px-2.5 py-2.5"
-                  >
-                    <Icon className="size-4" />
-                  </Button>
-                ))}
+                .map(({ key, href, label, Icon }) => {
+                  const isMailto = href.startsWith("mailto:");
+                  return (
+                    <Button
+                      key={key}
+                      variant="outline"
+                      href={href}
+                      target={isMailto ? undefined : "_blank"}
+                      rel={isMailto ? undefined : "noreferrer"}
+                      aria-label={label}
+                      className="px-2.5 py-2.5"
+                    >
+                      <Icon className="size-4" />
+                    </Button>
+                  );
+                })}
             </div>
           </div>
         </div>
