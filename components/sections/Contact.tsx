@@ -10,7 +10,7 @@ export function Contact() {
     >
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-6 text-center">
-          <SectionLabel index="08" label="Contact" />
+          <SectionLabel index="04" label="Contact" />
           <h2 className="text-4xl font-semibold text-white sm:text-5xl">
             Want to <span className="text-accent italic">talk</span>?
           </h2>
