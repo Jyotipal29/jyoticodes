@@ -96,7 +96,7 @@ export function Nav() {
           <button
             ref={hamburgerRef}
             type="button"
-            onClick={() => setMobileOpen(true)}
+            onClick={() => setMobileOpen((prev) => !prev)}
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
