@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Nav } from "@/components/nav/Nav";
 import { ModalPresence } from "@/components/project-detail/ModalPresence";
@@ -34,6 +35,7 @@ export default function RootLayout({
           {children}
           <ModalPresence>{modal}</ModalPresence>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
